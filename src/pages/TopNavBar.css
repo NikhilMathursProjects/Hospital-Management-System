@@ -1,0 +1,135 @@
+.top-navbar {
+    background: #40bab4;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  .top-navbar1 {
+    /* background-color: #97dcf3;  */
+    padding: 0px;
+    /* border-radius: 7px; */
+    /* Horizontally center content */
+    margin-top: 20px;
+    margin-bottom: 13px;
+    width: fit-content;
+  }
+  
+  .page-link {
+    font-family: sans-serif;
+    /* text-transform: uppercase; */
+    font-weight: bold;
+    color: black;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    background-color: white;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 2px solid black;
+  }
+  .page-link1 {
+    text-decoration: none;
+    color: #000000;
+    padding: 8px 22px;
+    /* border: 0.2px solid grey; */
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for background color change and scale animation */
+    position: relative; /* Position relative for absolute positioning of active indicator */
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 2px solid black;
+  }
+  
+  .page-link:hover {
+    background: #40bab4;
+    color: black;
+  }
+  .page-link1:hover {
+    background-color: #40bab4; /* Background color change on hover */
+    transform: scale(1); /* Scale up on hover */
+  }
+  
+  .page-link:last-child {
+    margin-right: 0;
+  }
+  
+  /* New Active Class */
+  .active {
+    background-color: #40bab4;
+    color: #fff;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: inherit;
+    color: #000000; /* Update text color to white */
+    /* padding: 5px 10px; */
+    /* Update border color */
+    /* border-radius: 5px;u */
+    cursor: pointer;
+    font-size: 16px;
+    /* background-color: #fff; */
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 2px solid black;
+    height: 41.8px;
+    z-index: 1000;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 160px;
+    z-index: 1;
+    border: 1px solid #000; /* Update border color */
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
+  }
+  
+  .dropdown-content a {
+    color: #000; /* Update text color to white */
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    /* background-color: #40bab4; */
+    z-index: 1000;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #40bab4;
+    z-index: 1000;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 1000;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #40bab4;
+  }
+  .mobileNav {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 768px) {
+    .top-navbar1 {
+      display: none !important;
+    }
+  }
+  @media (min-width: 768px) {
+    .mobileNav {
+      display: none !important;
+    }
+  }
+  
