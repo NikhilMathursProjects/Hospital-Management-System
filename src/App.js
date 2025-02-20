@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import WelcomePage from "./pages/Welcome";
 import Login from "./pages/LogIn";
 import Layout from "./layout/layout";
+import ChartComponent from "./components/Graph/ChartComponent";
 
 const theme = createTheme({
   palette: {
@@ -98,19 +99,21 @@ const Pages = () => {
       {shouldShowLayout ? (
         <Layout>
           <Routes>
-            {/* Add other routes that need the Layout here */}
+            {/* Added Route for Chart Page */}
+            <Route path="/chart" element={<ChartComponent />} /> 
           </Routes>
         </Layout>
       ) : (
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route path="/login" element={<Login />} />
-          {/* Add other routes that don't need the Layout here */}
+          {/* Added Route for Chart Page */}
+          <Route path="/chart" element={<ChartComponent />} /> 
         </Routes>
       )}
     </>
   );
-};
+}
 
 function App() {
   return (
