@@ -1,0 +1,61 @@
+import React, { useState } from "react";
+import { Box } from "@mui/material";
+import { Rnd } from "react-rnd";
+
+const ResizableDraggableComponent = ({ id, text, onResize, onDrag }) => {
+  return (
+    <Rnd
+      default={{ width: 200, height: 150, x: 0, y: 0 }}
+      minWidth={150}
+      minHeight={100}
+      bounds="parent"
+      onResizeStop={(e, direction, ref, delta, position) => {
+        onResize(id, { width: ref.offsetWidth, height: ref.offsetHeight, ...position });
+      }}
+      onDragStop={(e, d) => {
+        onDrag(id, { x: d.x, y: d.y });
+      }}
+      style={{
+        border: "1px solid #ccc",
+        background: "white",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      {text}
+    </Rnd>
+  );
+};
+
+const ResizableDraggablePage = () => {
+  const [components, setComponents] = useState([
+    { id: 1, text: "Component 1", width: 200, height: 150, x: 0, y: 0 },
+    { id: 2, text: "Component 2", width: 200, height: 150, x: 220, y: 0 },
+    { id: 3, text: "Component 3", width: 200, height: 150, x: 440, y: 0 },
+  ]);
+
+  const updateComponent = (id, newProps) => {
+    setComponents((prev) =>
+      prev.map((comp) => (comp.id === id ? { ...comp, ...newProps } : comp))
+    );
+  };
+
+  return (
+    <Box
+      sx={{ width: "100%", height: "100vh", position: "relative", overflow: "hidden", p: 2 }}
+    >
+      {components.map((comp) => (
+        <ResizableDraggableComponent
+          key={comp.id}
+          id={comp.id}
+          text={comp.text}
+          onResize={updateComponent}
+          onDrag={updateComponent}
+        />
+      ))}
+    </Box>
+  );
+};
+
+export default ResizableDraggablePage;

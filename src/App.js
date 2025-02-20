@@ -7,6 +7,7 @@ import WelcomePage from "./pages/Welcome";
 import Login from "./pages/LogIn";
 import Layout from "./layout/layout";
 import ChartComponent from "./components/Graph/ChartComponent";
+import TestPage from "./pages/testpage";
 
 const theme = createTheme({
   palette: {
@@ -101,6 +102,7 @@ const Pages = () => {
           <Routes>
             {/* Added Route for Chart Page */}
             <Route path="/chart" element={<ChartComponent />} /> 
+            <Route path="/hii" element={<TestPage/>}/>
           </Routes>
         </Layout>
       ) : (

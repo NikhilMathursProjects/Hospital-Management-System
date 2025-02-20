@@ -13,7 +13,7 @@ const data = [
 
 const ChartComponent = () => {
     return (
-        <div style={{ padding: "20px", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", backgroundColor: "#fff", width: "380px" }}>
+        <div style={{ padding: "20px", borderRadius: "10px", boxShadow: "0 4px 50px rgba(0, 0, 0, 0.1)", backgroundColor: "#fff", width: "380px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
                 <h3>Purchase Reports</h3>
                 <span style={{ color: "#2563eb", fontSize: "14px" }}>7 days</span>
